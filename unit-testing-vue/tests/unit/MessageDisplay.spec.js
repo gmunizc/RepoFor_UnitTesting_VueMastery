@@ -7,10 +7,10 @@ jest.mock("@/services/axios.js");
 
 describe("MessageDisplay", () => {
   it("Calls getMessage and displays message", async () => {
-    const wrapper = mount(MessageDisplay);
     // mock the API call
     const mockMessage = "Hello from the db";
     getMessage.mockResolvedValueOnce({ text: mockMessage });
+    const wrapper = mount(MessageDisplay);
     // wait for promise to resolve
     await flushPromises();
     // check that call happened once
